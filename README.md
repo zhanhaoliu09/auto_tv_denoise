@@ -3,8 +3,7 @@ This repertory contains the demo code for 1D Total variation (TV) denoising meth
 
 Let's note the sample vector <img src="https://render.githubusercontent.com/render/math?math=y = (y_1, \cdots, y_n)"> and the sample time vector <img src="https://render.githubusercontent.com/render/math?math=t = (t_1, \cdots, t_n)"> with <img src="https://render.githubusercontent.com/render/math?math=n"> the number of samples. We introduce the sampling period vector <img src="https://render.githubusercontent.com/render/math?math=\tau = (\tau_1, \cdots, \tau_n)"> with <img src="https://render.githubusercontent.com/render/math?math=\tau_i = t_{i+1}- t_i"> and <img src="https://render.githubusercontent.com/render/math?math=\tau_1 = \tau_2">. We considered the TV denoisng method:
 
-<img src="https://render.githubusercontent.com/render/math?math=u^*(\lambda) = \arg \min_u \{\sum_{i=1}^n\tau_i(y_i-u_i)^2 + \lambda \sum_{i=1}^{n-1}|u_{i+1} - u_i|\}
-"> 
+<img src="https://render.githubusercontent.com/render/math?math=u^*(\lambda) = \arg \min_u \{\sum_{i=1}^n\tau_i(y_i-u_i)^2 + \lambda \sum_{i=1}^{n-1}|u_{i+1} - u_i|\}"> 
 with <img src="https://render.githubusercontent.com/render/math?math=\lambda"> a given hyper-parameter and <img src="https://render.githubusercontent.com/render/math?math=u^*(\lambda)"> the proposed restoration.
 
 We propose to estimate <img src="https://render.githubusercontent.com/render/math?math=\lambda"> by tracking the discontinuity of the tendency of the local extremun number (noted <img src="https://render.githubusercontent.com/render/math?math=g(\lambda)">) of the restoration <img src="https://render.githubusercontent.com/render/math?math=u^*(\lambda)"> in function of <img src="https://render.githubusercontent.com/render/math?math=\lambda">. 
