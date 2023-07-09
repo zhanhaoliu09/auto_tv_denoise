@@ -29,21 +29,24 @@ It is written in pure Python and depends on the following libraries: `numpy`, `s
  
 
 ## Usage
-### Initialization 
+### Initialization
 
 ```python
-from denoise_tv.denoise_tv import Denoise_tv_naive
-deno = Denoise_tv_naive(y, t) # y: sample vector, t: sampling time vector
+from auto_tv_denoise.denoise_tv import Denoise_tv_naive
+
+deno = Denoise_tv_naive(y, t)  # y: sample vector, t: sampling time vector
 ```
 
 ### TV-denoisng with automatic method for <img src="https://render.githubusercontent.com/render/math?math=\lambda"> estimation
 Here an example wit automatic choice of the parameter <img src="https://render.githubusercontent.com/render/math?math=q">
+
 ```python
-from denoise_tv.denoise_tv import Denoise_tv_naive
+from auto_tv_denoise.denoise_tv import Denoise_tv_naive
+
 deno = Denoise_tv_naive(y, t)
 deno.denoise_auto()
-u, t = deno.get_restoration() # u the proposed restoration
-l_select = deno.get_l_select() # get lambda_ours
+u, t = deno.get_restoration()  # u the proposed restoration
+l_select = deno.get_l_select()  # get lambda_ours
 ```
 
 For the manuel choice of parameter <img src="https://render.githubusercontent.com/render/math?math=\log_{10}(q) = 1">
